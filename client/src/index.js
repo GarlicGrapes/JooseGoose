@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-import blogsReducer from './reducers/blogsReducer';
+import rootReducer from './reducers'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const store = createStore(blogsReducer)
+const store = createStore(rootReducer)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

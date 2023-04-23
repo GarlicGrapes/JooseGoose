@@ -1,13 +1,21 @@
 // const initialState = {blogsLoading: true, blogs: []}
-const initialState = [{
-    title: "TITLEEE",
-    content: "Here is the content of the blog post"
-}]
+const initialState = {
+    blogsLoading: true,
+    blogs: [
+    {title: "TITLEEE",
+    content: "Here is the content of the blog post"},
+    {title: "Post 2",
+    content: "Here is the content of the blog post 2"}
+    ]
+}
 
 const blogsReducer = (state = initialState, action) => {
     switch(action.type) {
-        // case "ADD_BLOG":
-        //     return[...state, action.payload]
+        case "ADD_BLOG":
+            return { 
+                ...state, 
+                blogs: [...state.blogs, action.payload] 
+            }
         default:
             return state;
     }

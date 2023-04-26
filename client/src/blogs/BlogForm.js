@@ -1,23 +1,37 @@
-import React, {useState} from 'react'
-import { useDispatch } from 'react-redux'
-import { addBlog } from '../actions'
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { addBlog, updateBlog } from '../actions/blogs'
 
 const BlogForm = () => {
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
+  const [id, setId] = useState(null)
 
   const dispatch = useDispatch()
+  const { editMode, editedBlog } = useSelector(store => store.blogsReducer)
 
+  useEffect(() => {
+    if(editMode) {
+      setTitle(editedBlog.title)
+      setContent(editedBlog.content)
+      setId(editedBlog.id)
+    }
+  }, [editMode])
+  
+  
   const handleSubmit = e => {
     e.preventDefault()
-    dispatch(addBlog({title, content}))
+    const blog = {title, content}
+    dispatch(editMode ? updateBlog(blog) : addBlog(blog))
+    setTitle("")
+    setContent("")
   }
 
 
 
   return (
     <div>
-      <h3>New Blog</h3>
+      <h3>{editMode ? "Edit" : "New"} Blog</h3>
       <form onSubmit={handleSubmit}>
         
         <>

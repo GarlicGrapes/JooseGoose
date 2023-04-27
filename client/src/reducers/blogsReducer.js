@@ -24,7 +24,7 @@ const blogsReducer = (state = initialState, action) => {
             console.log(state)
             return {
                 ...state,
-                blogs: state.blogs.filter(blog => blog.title !== action.payload.title)
+                blogs: state.blogs.filter(blog => blog.id !== action.payload.id)
             }
         case "EDIT_BLOG_MODE": {
             return {

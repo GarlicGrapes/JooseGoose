@@ -5,7 +5,7 @@ import { addBlog, updateBlog } from '../actions/blogs'
 const BlogForm = () => {
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
-  const [id, setId] = useState(null)
+  // const [id, setId] = useState(null)
 
   const dispatch = useDispatch()
   const { editMode, editedBlog } = useSelector(store => store.blogsReducer)
@@ -14,14 +14,15 @@ const BlogForm = () => {
     if(editMode) {
       setTitle(editedBlog.title)
       setContent(editedBlog.content)
-      setId(editedBlog.id)
+      // setId(editedBlog.id)
     }
   }, [editMode])
   
   
   const handleSubmit = e => {
     e.preventDefault()
-    const blog = {title, content, id}
+    // const blog = {title, content, id}
+    const blog = {title, content}
     dispatch(editMode ? updateBlog(blog) : addBlog(blog))
     setTitle("")
     setContent("")

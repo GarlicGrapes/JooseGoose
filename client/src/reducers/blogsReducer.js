@@ -1,15 +1,9 @@
 // const initialState = {blogsLoading: true, blogs: []}
 const initialState = {
-    blogsLoading: true,
-    blogs: [
-    {title: "TITLEEE",
-    content: "Here is the content of the blog post"},
-    {title: "Post 2",
-    content: "Here is the content of the blog post 2"}
-    ],
+    // blogsLoading: true,
+    blogs: [],
     editMode: false,
-    editedBlog: null,
-    id: 0
+    editedBlog: null
 }
 
 const blogsReducer = (state = initialState, action) => {
@@ -17,8 +11,7 @@ const blogsReducer = (state = initialState, action) => {
         case "ADD_BLOG":
             return { 
                 ...state, 
-                blogs: [...state.blogs, {...action.payload, id: state.id + 1}],
-                id: state.id + 1
+                blogs: [...state.blogs, {...action.payload}]
             }
         case "DELETE_BLOG":
             console.log(state)

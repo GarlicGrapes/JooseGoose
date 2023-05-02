@@ -8,6 +8,11 @@ const initialState = {
 
 const blogsReducer = (state = initialState, action) => {
     switch(action.type) {
+        case "LOAD_BLOGS":
+            return {
+                ...state, 
+                blogs: action.payload
+            }
         case "ADD_BLOG":
             return { 
                 ...state, 

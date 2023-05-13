@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blogs
 
   resources :posts, only: [:index, :show]
   resources :users, only: [:create, :show]

@@ -8,11 +8,15 @@ import BlogForm from "./blogs/BlogForm";
 function App() {
   const dispatch = useDispatch()
 
+  // useEffect(() => {
+  //   dispatch(loadBlogs)
+  // },[dispatch])
+
   useEffect(() => {
-    dispatch(loadBlogs)
-    console.log(dispatch(loadBlogs))
-    console.log(loadBlogs)
-  },[])
+    fetch("http://localhost:3001/blogs")
+    .then(res => res.json())
+    .then(data => dispatch({type:"LOAD_BLOGS", payload: data}))
+  })
 
   return (
     <div className="App">

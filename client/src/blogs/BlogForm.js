@@ -21,7 +21,9 @@ const BlogForm = () => {
   
   const handleSubmit = e => {
     e.preventDefault()
-    const blog = {title, content}
+    console.log(e)
+    const blog = {title, content, id}
+    console.log (blog)
     dispatch(editMode ? updateBlog(blog) : addBlog(blog))
     setTitle("")
     setContent("")

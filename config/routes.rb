@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :ingredients
+  resources :cocktail_ingredients
+  resources :cocktails
   resources :blogs
 
   resources :posts, only: [:index, :show]

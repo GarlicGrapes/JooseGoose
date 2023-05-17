@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import { loadBlogs } from "./actions/blogs";
 import BlogList from "./blogs/BlogList";
 import BlogForm from "./blogs/BlogForm";
+import LoginForm from "./sessions/loginForm";
 
 function App() {
   const dispatch = useDispatch()
@@ -23,6 +24,7 @@ function App() {
 
       <BlogList/>
       <BlogForm/>
+      <LoginForm/>
     </div>
   );
 }

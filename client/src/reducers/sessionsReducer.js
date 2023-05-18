@@ -13,10 +13,8 @@ const sessionsReducer = (state=initialState, action) => {
         }
         case "LOGOUT":
             console.log("you have logged out")
-            return
-            {
-                1
-            }
+            return state;
+            //!!^^INCOMPLETE FOR TESTING
         default:
             return state;
 

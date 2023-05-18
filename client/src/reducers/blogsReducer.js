@@ -1,4 +1,3 @@
-// const initialState = {blogsLoading: true, blogs: []}
 const initialState = {
     // blogsLoading: true,
     blogs: [],
@@ -52,7 +51,5 @@ const blogsReducer = (state = initialState, action) => {
     }
 }
 
-//actions: {type: "LOAD_BLOGS" , playload: }
-//actions: {type: "BLOGS_LOADED" , playload: }
 
 export default blogsReducer;

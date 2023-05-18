@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addBlog, updateBlog } from '../actions/blogs'
+import { addIngredient } from '../actions/ingredients'
 
 const IngredientForm = () => {
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [imgUrl, setImgUrl] = useState("")
 
-//   const dispatch = useDispatch()
+  const dispatch = useDispatch()
 //   const { editMode, editedBlog } = useSelector(store => store.blogsReducer)
 
 
@@ -15,8 +15,8 @@ const IngredientForm = () => {
   const handleSubmit = e => {
     e.preventDefault()
     console.log(e)
-    const ingredient = {name, description, img_url}
-    console.log(ingredient)
+    const ingredient = {name, description, imgUrl}
+    dispatch(addIngredient(ingredient))
     setName("")
     setDescription("")
     setImgUrl("")
@@ -31,7 +31,7 @@ const IngredientForm = () => {
         
         <>
         <label htmlFor="name">Name: </label>
-        <input type="text" value={title} onChange={e => setName(e.target.value)}/>
+        <input type="text" value={name} onChange={e => setName(e.target.value)}/>
         </>
 
         <>

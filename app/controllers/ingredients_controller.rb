@@ -36,6 +36,7 @@ class IngredientsController < ApplicationController
   # DELETE /ingredients/1
   def destroy
     @ingredient.destroy
+    render json: :no_head
   end
 
   private

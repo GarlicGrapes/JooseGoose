@@ -8,7 +8,6 @@ export const loadBlogs = () => {
         fetch("http://localhost:3001/blogs")
         .then(res => res.json())
         .then(data => dispatch({type: "LOAD_BLOGS", payload: data}))
-        .then(data => console.log(data))
     }
 }
 

@@ -12,7 +12,12 @@ const ingredientsReducer = (state = initialState, action) => {
         case "ADD_INGREDIENT":
             return { 
                 ...state, 
-                blogs: [...state.ingredients, {...action.payload}]
+                ingredients: [...state.ingredients, {...action.payload}]
+            }
+        case "DELETE_INGREDIENT":
+            return {
+                ...state,
+                ingredients: state.ingredients.filter(ingredient => ingredient.id !== action.payload.id)
             }
         default:
             return state;

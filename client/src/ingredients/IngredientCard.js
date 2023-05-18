@@ -1,12 +1,12 @@
 import React from 'react'
-// import {deleteBlog, editBlogMode} from "../actions/blogs"
-// import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { deleteIngredient } from '../actions/ingredients'
 
 const IngredientCard = ({ingredient}) => {
-//   const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   const handleDelete = () => {
-    // dispatch(deleteBlog(blog))
+    dispatch(deleteIngredient(ingredient))
     console.log(`${ingredient.name} deleted`)
   }
 
@@ -19,7 +19,7 @@ const IngredientCard = ({ingredient}) => {
     <div>
         <h3>{ingredient.name}</h3>
         <div>{ingredient.description}</div>
-        <button onClick={handleDelete}>Delete Post</button>
+        <button onClick={handleDelete}>Delete Ingredient</button>
         {/* <button onClick={handleEdit}>Edit Post</button> */}
     </div>
   )

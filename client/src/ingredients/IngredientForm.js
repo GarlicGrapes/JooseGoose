@@ -16,6 +16,7 @@ const IngredientForm = () => {
     e.preventDefault()
     console.log(e)
     const ingredient = {name, description, imgUrl}
+    console.log(ingredient)
     dispatch(addIngredient(ingredient))
     setName("")
     setDescription("")

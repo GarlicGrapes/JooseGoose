@@ -8,7 +8,6 @@ export const loadIngredients = () => {
         fetch("http://localhost:3001/ingredients")
         .then(res => res.json())
         .then(data => dispatch({type: "LOAD_INGREDIENTS", payload: data}))
-        .then(data => console.log(data))
     }
 }
 
@@ -21,6 +20,16 @@ export const addIngredient = ingredient => {
         })
         .then(res => res.json())
         .then(data => dispatch({type: "ADD_INGREDIENT", payload: data}))
-        .then(data => console.log(data))
+    }
+}
+
+export const deleteIngredient = ingredient => {
+    return (dispatch) => {
+        fetch(`http://localhost:3001/ingredients/${ingredient.id}`, {
+            method: "DELETE",
+            headers: headers
+        })
+        .then(res => res.json())
+        .then(data => dispatch({type: "DELETE_INGREDIENT", payload: ingredient}))
     }
 }

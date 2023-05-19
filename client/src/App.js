@@ -8,6 +8,8 @@ import BlogForm from "./blogs/BlogForm";
 import LoginForm from "./sessions/loginForm";
 import IngredientForm from "./ingredients/IngredientForm";
 import IngredientList from "./ingredients/IngredientList";
+import NavBar from "./Home/NavBar";
+import HomePage from "./Home/NavBar";
 
 function App() {
   const dispatch = useDispatch()
@@ -19,12 +21,19 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar/>
 
-      <BlogList/>
+        {/* <Switch>
+            <Route exact path="/">
+              <HomePage/>
+            </Route>
+
+        </Switch> */}
+      {/* <BlogList/> */}
       {/* <BlogForm/> */}
       {/* <LoginForm/> */}
-      <IngredientForm/>
-      <IngredientList/>
+      {/* <IngredientForm/>
+      <IngredientList/> */}
     </div>
   );
 }

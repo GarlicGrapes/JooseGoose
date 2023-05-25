@@ -1,5 +1,5 @@
 class BlogTag < ApplicationRecord
-    
-    belongs_to :blog
+    validates :blog_id, presence: true
+    belongs_to :blog, dependent: :destroy
     belongs_to :tag
 end

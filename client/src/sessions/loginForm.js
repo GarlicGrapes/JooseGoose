@@ -8,36 +8,36 @@ const LoginForm = () => {
 
   const dispatch = useDispatch()
   
-  // const handleSubmit = e => {
-  //   e.preventDefault()
-  //   const user = {username: username, password: password}
-  //   dispatch(postLogin(user))
-  // }
+  const handleSubmit = e => {
+    e.preventDefault()
+    const user = {username: username, password: password}
+    dispatch(postLogin(user))
+  }
 
   // const handleLogout = () => {
   //   dispatch(logout())
   // }
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    const user = {username, password}
-  //   fetch('http://localhost:3001/login', {
-  //     "method": "POST",
-  //     "Accept": "application/json",
-  //     "Content-type": "application/json",
-  //     "body" : JSON.stringify(user)
-  // })        
-  fetch('http://localhost:3001/login', {
-    method: "POST",
-    headers: {
-        "Content-Type" : "application/json",
-        "Accept" : "application/json"
-    },
-    body: JSON.stringify({username: username, password: password})
-})
-.then(res => res.json())
-.then(data => console.log(data))
-  }
+//   const handleSubmit = e => {
+//     e.preventDefault()
+//     const user = {username, password}
+//   //   fetch('http://localhost:3001/login', {
+//   //     "method": "POST",
+//   //     "Accept": "application/json",
+//   //     "Content-type": "application/json",
+//   //     "body" : JSON.stringify(user)
+//   // })        
+//   fetch('http://localhost:3001/login', {
+//     method: "POST",
+//     headers: {
+//         "Content-Type" : "application/json",
+//         "Accept" : "application/json"
+//     },
+//     body: JSON.stringify({username: username, password: password})
+// })
+// .then(res => res.json())
+// .then(data => console.log(data))
+//   }
 
 
 

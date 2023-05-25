@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addIngredient } from '../actions/ingredients'
 
@@ -6,10 +6,20 @@ const IngredientForm = () => {
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [imgUrl, setImgUrl] = useState("")
+  const [user, setUser] = useState({})
 
   const dispatch = useDispatch()
 //   const { editMode, editedBlog } = useSelector(store => store.blogsReducer)
+  // const user = useSelector((store) => store.sessionsReducer.user)
 
+    useEffect(() => {
+      fetch('http://localhost:3001/me', {
+          "Accept": "application/json",
+          "Content-type": "application/json"
+    })        .then(res => res.json())
+    .then(res => setUser(res))
+    .then(console.log(user))
+    },[])
 
   
   const handleSubmit = e => {
@@ -27,7 +37,7 @@ const IngredientForm = () => {
 
   return (
     <div>
-      <h3>New Ingredient</h3>
+      <h3>Add to our Ingredient Library</h3>
       <form onSubmit={handleSubmit}>
         
         <>

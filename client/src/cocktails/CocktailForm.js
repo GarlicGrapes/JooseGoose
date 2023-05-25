@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addBlog, updateBlog } from '../actions/blogs'
 
 const CocktailForm = () => {
   const [name, setName] = useState("")

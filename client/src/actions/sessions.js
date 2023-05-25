@@ -5,7 +5,6 @@ const headers = {
 
 export const postLogin = user => {
     return (dispatch) => {
-        console.log(user)
         fetch("http://localhost:3001/login", {
             method: "POST",
             headers: headers,
@@ -17,13 +16,25 @@ export const postLogin = user => {
     }
 }
 
-export const logout = user => {
+export const logout = () => {
     return (dispatch) => {
         fetch("http://localhost:3001/logout", {
             method: "DELETE",
             headers: headers
         })
         // .then(res => res.json())
-        // .then(data => dispatch({type: "LOGOUT", payload: user}))
+        // .then(data => dispatch({type: "LOGOUT", payload: data}))
     }
 }
+
+export const loadUser = () => {
+    return (dispatch) => {
+        fetch("http://localhost:3001/me", {
+            headers: headers
+        })
+        .then(res => res.json())
+        .then(data => dispatch({type: "LOAD_USER", payload: data}))
+    }
+}
+
+

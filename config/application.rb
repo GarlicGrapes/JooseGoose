@@ -40,6 +40,8 @@ module JooseGoose
     # Adding back cookies and session middleware
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+    # config.session_store :cookie_store, key: 'joose_goose_session', domain: :all, tld_length: 2
+
 
     # Use SameSite=Strict for all cookies to help protect against CSRF
     config.action_dispatch.cookies_same_site_protection = :strict

@@ -5,6 +5,12 @@ const initialState = {
 
 const sessionsReducer = (state=initialState, action) => {
     switch(action.type) {
+        case "LOAD_USER": 
+            return{
+                ...state,
+                currentUser: action.payload,
+                loggedIn: true
+        }
         case "POST_LOGIN":
             return{
                 ...state,
@@ -13,8 +19,11 @@ const sessionsReducer = (state=initialState, action) => {
         }
         case "LOGOUT":
             console.log("you have logged out")
-            return state;
-            //!!^^INCOMPLETE FOR TESTING
+            return {
+                ...state,
+                currentUser: {},
+                loggedIn: false
+            }
         default:
             return state;
 

@@ -1,11 +1,14 @@
 import {useEffect} from "react";
 import { Switch, Route } from "react-router-dom";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { loadBlogs } from "./actions/blogs";
+import { loadUser } from "./actions/sessions"
 import { loadIngredients } from "./actions/ingredients";
+import { loadCocktails } from "./actions/cocktails";
 import BlogList from "./blogs/BlogList";
 import BlogForm from "./blogs/BlogForm";
 import LoginForm from "./sessions/loginForm";
+import CocktailList from "./cocktails/CocktailList";
 import IngredientForm from "./ingredients/IngredientForm";
 import IngredientList from "./ingredients/IngredientList";
 import NavBar from "./Home/NavBar";
@@ -17,23 +20,47 @@ function App() {
   useEffect(() => {
     dispatch(loadBlogs())
     dispatch(loadIngredients())
+    dispatch(loadUser())
+    dispatch(loadCocktails())
   },[dispatch])
+
+  // const user = useSelector((store) => store.sessionsReducer.currentUser)
+
+
+
+  
 
   return (
     <div className="App">
+      
+      <img className="HomeLogo" src="https://i.imgur.com/7eKOvAH.png" alt="Joose Goose Logo"/>
       <NavBar/>
-
-        {/* <Switch>
+        {/* WELCOME, {user.username}! */}
+        <Switch>
             <Route exact path="/">
-              <HomePage/>
+              {/* <HomePage/> */}
+              <BlogList/>
             </Route>
 
-        </Switch> */}
-      {/* <BlogList/> */}
-      {/* <BlogForm/> */}
-      {/* <LoginForm/> */}
-      {/* <IngredientForm/>
-      <IngredientList/> */}
+            <Route exact path="/browse-cocktails">
+              <CocktailList/>
+            </Route>
+
+            <Route exact path="/add-ingredient">
+              <IngredientForm/>
+              <IngredientList/> 
+            </Route>
+
+            <Route exact path="/create-blog">
+              <BlogForm/>
+            </Route>
+
+            <Route exact path="/login">
+              <LoginForm/>
+            </Route>
+
+        </Switch>
+
     </div>
   );
 }

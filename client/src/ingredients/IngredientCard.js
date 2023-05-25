@@ -16,7 +16,7 @@ const IngredientCard = ({ingredient}) => {
 //   }
 
   return (
-    <div>
+    <div> 
         <h3>{ingredient.name}</h3>
         <div>{ingredient.description}</div>
         <button onClick={handleDelete}>Delete Ingredient</button>

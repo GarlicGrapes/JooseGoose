@@ -1,6 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: %i[ show update destroy ]
-
+  # skip_before_action :authorize, only: [:show, :index]
   # GET /ingredients
   def index
     @ingredients = Ingredient.all

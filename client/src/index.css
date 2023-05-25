@@ -23,3 +23,11 @@ code {
   background-color: white;
   text-align: center;
 }
+
+.HomeLogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  
+}

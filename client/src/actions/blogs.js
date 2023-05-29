@@ -41,6 +41,8 @@ return {
     payload: blog
   }
 }
+//TEMP FOR COMMIT TESTING
+
 
 export const updateBlog = blog => {
     console.log(blog)

@@ -16,7 +16,7 @@ const CocktailPage = () => {
 
     const cocktail = useSelector((store) => store.cocktailsReducer.currentCocktail)
     // const ingredientsList = cocktail.cocktail_ingredients.map((ingredient) => <CocktailIngredientCard ingredient={ingredient}/>)
-
+    console.log(cocktail)
 
 
 
@@ -35,8 +35,8 @@ return(
             <div>
             <img src={cocktail.img_url} alt={cocktail.title} width={500}></img>
             <h1>{cocktail.title}</h1>
-            {cocktail.cocktail_ingredients.map((cocktailIngredient) => <CocktailIngredientCard cocktailIngredient={cocktailIngredient}/>)}
-            <br/>
+            {/* {cocktail.cocktail_ingredients.map((cocktailIngredient) => <CocktailIngredientCard cocktailIngredient={cocktailIngredient}/>)}
+            <br/> */}
             <div className="cocktailInstructions">
                 {cocktail.instructions}
             </div>
@@ -44,14 +44,9 @@ return(
         )   : (
             "loading..."
             )}
-    
-        
-    </div>
-)
+           </div>
+)}
 
 
-
-
-}
 
 export default CocktailPage

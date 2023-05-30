@@ -14,18 +14,23 @@ const CocktailCard = ({cocktail}) => {
 //   const handleEdit = () => {
 //     dispatch(editBlogMode(blog))
 //   }
-console.log(cocktail)
+console.log(cocktail.instructions)
 
     const ingredientsList = cocktail.cocktail_ingredients.map((cocktailIngredient) => <CocktailIngredientCard cocktailIngredient={cocktailIngredient}/>)
 
   return (
     <div className='cocktailCard'>
-        <Link to={`/cocktails/${cocktail.id}`} className="navlink">{cocktail.title}</Link>  
+        
         <img src={cocktail.img_url} alt={cocktail.title} width={200}></img>
+        <br/>
+        <Link to={`/cocktails/${cocktail.id}`} className="navlink">{cocktail.title}</Link>  
         {/* <button onClick={handleDelete}>Delete Post</button>
         <button onClick={handleEdit}>Edit Post</button> */}
         <div className='ingredientsList'>
         {ingredientsList}
+        <div className='cocktailInstructions'>
+          {cocktail.instructions}
+        </div>
         </div>
 
     </div>

@@ -1,13 +1,13 @@
 import React from 'react'
 import {deleteBlog, editBlogMode} from "../actions/blogs"
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux"
 import BlogCard from './BlogCard'
 
 const SingleBlogPage = () => {
 
   const dispatch = useDispatch()
-  const user = {username: "CocktailGuy", id: 1}
-
+  const user = useSelector((store) => store.sessionsReducer.currentUser)
+//   const blog = useSelector((store) => store.blogsReducer.
 
 
   const handleDelete = () => {

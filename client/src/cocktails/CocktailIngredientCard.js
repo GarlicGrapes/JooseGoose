@@ -6,7 +6,7 @@ console.log(cocktailIngredient)
 
   return (
     <div>
-        INGREDIENT
+        {cocktailIngredient ? `${cocktailIngredient.quantity} ${cocktailIngredient.unit} : ${cocktailIngredient.ingredient.name}` : "Loading..."}
     </div>
   )
 }

@@ -15,6 +15,7 @@ export const showCocktail = (cocktail) => {
     return (dispatch) => {
         fetch(`http://localhost:3001/cocktails/${cocktail.id}`)
         .then(res => res.json())
+        .then(data => console.log(data))
         .then(data => dispatch({type: "SHOW_COCKTAIL", payload: data}))
     }
 }

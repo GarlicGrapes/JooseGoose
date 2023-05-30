@@ -12,6 +12,8 @@ const sessionsReducer = (state=initialState, action) => {
                 loggedIn: true
         }
         case "POST_LOGIN":
+            console.log("LOGGING IN!")
+            console.log(action.payload)
             return{
                 ...state,
                 currentUser: action.payload,

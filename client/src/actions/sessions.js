@@ -5,14 +5,15 @@ const headers = {
 
 export const postLogin = user => {
     return (dispatch) => {
-        fetch("http://localhost:3001/login", {
-            method: "POST",
-            headers: headers,
-            body: JSON.stringify(user)
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .then(data => dispatch({type: "POST_LOGIN", payload: data}))
+        // fetch("http://localhost:3001/login", {
+        //     method: "POST",
+        //     headers: headers,
+        //     body: JSON.stringify(user)
+        // })
+        // .then(res => res.json())
+        // .then(data => console.log(data))
+        // .then(data => dispatch({type: "POST_LOGIN", payload: data}))
+        dispatch({type: "POST_LOGIN", payload: {username: "123", id: 1, img_url: "www.bomb.com"}})
     }
 }
 
@@ -28,12 +29,15 @@ export const logout = () => {
 }
 
 export const loadUser = () => {
+    // return (dispatch) => {
+    //     fetch("http://localhost:3001/me", {
+    //         headers: headers
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => dispatch({type: "LOAD_USER", payload: data}))
+    // }
     return (dispatch) => {
-        fetch("http://localhost:3001/me", {
-            headers: headers
-        })
-        .then(res => res.json())
-        .then(data => dispatch({type: "LOAD_USER", payload: data}))
+        dispatch({username: "123", id: 1, img_url: "www.bomb.com"})
     }
 }
 

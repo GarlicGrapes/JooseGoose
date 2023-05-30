@@ -20,10 +20,10 @@ function App() {
   useEffect(() => {
     dispatch(loadBlogs())
     dispatch(loadIngredients())
-    dispatch(loadUser())
+    // dispatch(loadUser())
     dispatch(loadCocktails())
   },[dispatch])
-
+  const user = {username: "123", id: 1, img_url: "bomb.com"}
   // const user = useSelector((store) => store.sessionsReducer.currentUser)
 
 
@@ -35,7 +35,7 @@ function App() {
       
       <img className="HomeLogo" src="https://i.imgur.com/7eKOvAH.png" alt="Joose Goose Logo"/>
       <NavBar/>
-        {/* WELCOME, {user.username}! */}
+
         <Switch>
             <Route exact path="/">
               {/* <HomePage/> */}

@@ -1,5 +1,6 @@
 const initialState = {
-    cocktails : []
+    cocktails : [],
+    currentCocktail: {}
 }
 
 const cocktailsReducer = (state = initialState, action) => {
@@ -9,6 +10,11 @@ const cocktailsReducer = (state = initialState, action) => {
             return {
                 ...state, 
                 cocktails: action.payload
+            }
+        case "SHOW_COCKTAIL": 
+            return {
+                ...state,
+                currentCocktail: action.payload
             }
         default:
             return state;

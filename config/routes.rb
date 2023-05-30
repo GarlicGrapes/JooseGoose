@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :blog_cocktails
   resources :blog_tags
   resources :cocktail_tags
   resources :tags

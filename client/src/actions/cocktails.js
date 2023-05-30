@@ -1,13 +1,21 @@
-// const headers = {
-//     "Accept": "application/json",
-//     "Content-type": "application/json"
-// }
+const headers = {
+    "Accept": "application/json",
+    "Content-type": "application/json"
+}
 
 export const loadCocktails = () => {
     return (dispatch) => {
         fetch("http://localhost:3001/cocktails")
         .then(res => res.json())
         .then(data => dispatch({type: "LOAD_COCKTAILS", payload: data}))
+    }
+}
+
+export const showCocktail = (cocktail) => {
+    return (dispatch) => {
+        fetch(`http://localhost:3001/cocktails/${cocktail.id}`)
+        .then(res => res.json())
+        .then(data => dispatch({type: "SHOW_COCKTAIL", payload: data}))
     }
 }
 

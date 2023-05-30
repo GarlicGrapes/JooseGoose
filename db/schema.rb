@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_25_172226) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_30_111712) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blog_cocktails", force: :cascade do |t|
+    t.integer "blog_id"
+    t.integer "cocktail_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "blog_tags", force: :cascade do |t|
     t.integer "blog_id"

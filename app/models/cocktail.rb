@@ -6,4 +6,8 @@ class Cocktail < ApplicationRecord
     has_many :ingredients, through: :cocktail_ingredients
     has_many :cocktail_tags, dependent: :destroy
     has_many :tags, through: :cocktail_tags
+
+    # def listIngredients
+    #     puts self
+    # end
 end

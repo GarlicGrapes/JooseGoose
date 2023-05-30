@@ -1,6 +1,6 @@
 const initialState = {
-    currentUser: {},
-    loggedIn: false
+    currentUser: {username: "CocktailGuy", id: 1},
+    loggedIn: true
 }
 
 const sessionsReducer = (state=initialState, action) => {

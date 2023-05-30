@@ -13,6 +13,7 @@ import IngredientForm from "./ingredients/IngredientForm";
 import IngredientList from "./ingredients/IngredientList";
 import NavBar from "./Home/NavBar";
 import HomePage from "./Home/NavBar";
+import CocktailPage from "./cocktails/CocktailPage";
 
 function App() {
   const dispatch = useDispatch()
@@ -23,8 +24,8 @@ function App() {
     // dispatch(loadUser())
     dispatch(loadCocktails())
   },[dispatch])
-  const user = {username: "123", id: 1, img_url: "bomb.com"}
-  // const user = useSelector((store) => store.sessionsReducer.currentUser)
+
+  const user = useSelector((store) => store.sessionsReducer.currentUser)
 
 
 
@@ -57,6 +58,10 @@ function App() {
 
             <Route exact path="/login">
               <LoginForm/>
+            </Route>
+
+            <Route exact path="/cocktails/:id">
+              <CocktailPage/>
             </Route>
 
         </Switch>

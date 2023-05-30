@@ -11,11 +11,10 @@ export const loadCocktails = () => {
     }
 }
 
-export const showCocktail = (cocktail) => {
+export const showCocktail = (cocktailId) => {
     return (dispatch) => {
-        fetch(`http://localhost:3001/cocktails/${cocktail.id}`)
+        fetch(`http://localhost:3001/cocktails/${cocktailId}`)
         .then(res => res.json())
-        .then(data => console.log(data))
         .then(data => dispatch({type: "SHOW_COCKTAIL", payload: data}))
     }
 }

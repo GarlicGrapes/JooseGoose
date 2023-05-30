@@ -1,5 +1,6 @@
 import React from 'react'
 import CocktailIngredientCard from './CocktailIngredientCard'
+import {Link, NavLink} from "react-router-dom"
 // import {deleteBlog, editBlogMode} from "../actions/blogs"
 // import { useDispatch } from 'react-redux'
 
@@ -15,11 +16,11 @@ const CocktailCard = ({cocktail}) => {
 //   }
 console.log(cocktail)
 
-    const ingredientsList = cocktail.cocktail_ingredients.map((ingredient) => <CocktailIngredientCard cocktailIngredient={ingredient}/>)
+    const ingredientsList = cocktail.cocktail_ingredients.map((cocktailIngredient) => <CocktailIngredientCard cocktailIngredient={cocktailIngredient}/>)
 
   return (
     <div className='cocktailCard'>
-        <h3>{cocktail.title}</h3>
+        <Link to={`/cocktails/${cocktail.id}`} className="navlink">{cocktail.title}</Link>  
         <img src={cocktail.img_url} alt={cocktail.title} width={200}></img>
         {/* <button onClick={handleDelete}>Delete Post</button>
         <button onClick={handleEdit}>Edit Post</button> */}

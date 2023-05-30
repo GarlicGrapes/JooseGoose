@@ -10,8 +10,8 @@ const IngredientForm = () => {
 
   const dispatch = useDispatch()
 //   const { editMode, editedBlog } = useSelector(store => store.blogsReducer)
-  setUser(useSelector((store) => store.sessionsReducer.user))
-  console.log(user)
+  // setUser(useSelector((store) => store.sessionsReducer.currentUser))
+
     // useEffect(() => {
     //   fetch('http://localhost:3001/me', {
     //       "Accept": "application/json",
@@ -24,9 +24,7 @@ const IngredientForm = () => {
   
   const handleSubmit = e => {
     e.preventDefault()
-    console.log(e)
     const ingredient = {name, description, imgUrl}
-    console.log(ingredient)
     dispatch(addIngredient(ingredient))
     setName("")
     setDescription("")
@@ -37,7 +35,7 @@ const IngredientForm = () => {
 
   return (
     <div>
-      {user? "welcome!": "not welcome!"}
+
       <h3>Add to our Ingredient Library</h3>
 
 

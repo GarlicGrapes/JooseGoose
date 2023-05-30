@@ -1,6 +1,7 @@
 const initialState = {
-    currentUser: {username: "CocktailGuy", id: 1},
-    loggedIn: true
+    // currentUser: {username: "CocktailGuy", id: 1},
+    currentUser: {},
+    loggedIn: false
 }
 
 const sessionsReducer = (state=initialState, action) => {
@@ -16,6 +17,12 @@ const sessionsReducer = (state=initialState, action) => {
             console.log(action.payload)
             return{
                 ...state,
+                currentUser: action.payload,
+                loggedIn: true
+        }
+        case "POST_SIGNUP":
+            return{
+                ...state, 
                 currentUser: action.payload,
                 loggedIn: true
         }

@@ -7,13 +7,14 @@ import { loadIngredients } from "./actions/ingredients";
 import { loadCocktails } from "./actions/cocktails";
 import BlogList from "./blogs/BlogList";
 import BlogForm from "./blogs/BlogForm";
-import LoginForm from "./sessions/loginForm";
+import LoginForm from "./sessions/LoginForm";
 import CocktailList from "./cocktails/CocktailList";
 import IngredientForm from "./ingredients/IngredientForm";
 import IngredientList from "./ingredients/IngredientList";
 import NavBar from "./Home/NavBar";
 import HomePage from "./Home/NavBar";
 import CocktailPage from "./cocktails/CocktailPage";
+import SignupForm from "./sessions/SignupForm";
 
 function App() {
   const dispatch = useDispatch()
@@ -58,6 +59,10 @@ function App() {
 
             <Route exact path="/login">
               <LoginForm/>
+            </Route>
+
+            <Route exact path="/signup">
+              <SignupForm/>
             </Route>
 
             <Route exact path="/cocktails/:id">

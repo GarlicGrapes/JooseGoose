@@ -20,7 +20,6 @@ export const addBlog = blog => {
         })
         .then(res => res.json())
         .then(data => dispatch({type: "ADD_BLOG", payload: data}))
-        .then(data => console.log(data))
     }
 }
 

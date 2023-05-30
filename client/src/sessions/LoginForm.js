@@ -1,17 +1,20 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { postLogin, logout } from '../actions/sessions'
+import { useHistory } from 'react-router-dom'
 
 const LoginForm = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
   const dispatch = useDispatch()
-  
+  const history = useHistory()
+
   const handleSubmit = e => {
     e.preventDefault()
     const user = {username: username, password: password}
     dispatch(postLogin(user))
+    history.push("/")
   }
 
   // const handleLogout = () => {

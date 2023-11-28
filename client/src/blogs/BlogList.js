@@ -14,7 +14,8 @@ const BlogList = () => {
   return (
     <div>
       <div>
-        {user? `Welcome, ${user.username}!` : "Welcome! Please Log in <3"}
+
+        {user.username? `Welcome, ${user.username}!` : "Welcome! Please Log in <3"}
       </div>
     {blogCards}
     </div>

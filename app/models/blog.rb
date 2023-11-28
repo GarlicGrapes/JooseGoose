@@ -5,5 +5,5 @@ class Blog < ApplicationRecord
     has_one :blog_cocktail
     has_one :cocktail, through: :blog_cocktail
 
-    validates :content, length: {minimum: 10, maximum: 2000}
+    validates :content, length: {minimum: 1, maximum: 2000}
 end

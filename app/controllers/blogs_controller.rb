@@ -17,8 +17,7 @@ class BlogsController < ApplicationController
   # POST /blogs
   def create
     @blog = Blog.new(blog_params)
-
-    if @blog.save
+   if @blog.save
       render json: @blog, status: :created, location: @blog
     else
       render json: @blog.errors, status: :unprocessable_entity
